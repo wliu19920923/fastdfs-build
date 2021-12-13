@@ -1,11 +1,11 @@
 FROM centos:7
 
 # 更新数据源
-WORKDIR /etc
-RUN mv yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
-RUN wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.cloud.tencent.com/repo/centos7_base.repo
-RUN yum clean all
-RUN yum makecache
+# WORKDIR /etc
+# RUN mv yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
+# RUN wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.cloud.tencent.com/repo/centos7_base.repo
+# RUN yum clean all
+# RUN yum makecache
 
 # 安装依赖
 RUN gcc gcc-c++ make automake autoconf libtool pcre pcre-devel zlib zlib-devel openssl-devel wget vim unzip -y
