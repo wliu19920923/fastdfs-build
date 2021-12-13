@@ -1,15 +1,14 @@
-FROM ubuntu:xenial
+FROM centos8:2.0
 
 # 更新数据源
-WORKDIR /etc/apt
-RUN echo 'deb http://mirrors.aliyun.com/ubuntu/ xenial main restricted universe multiverse' > sources.list
-RUN echo 'deb http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted universe multiverse' >> sources.list
-RUN echo 'deb http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted universe multiverse' >> sources.list
-RUN echo 'deb http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse' >> sources.list
-RUN apt-get update
+WORKDIR /etc
+RUN mv yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
+RUN wget -O yum.repos.d/CentOS-Base.repo http://mirrors.cloud.tencent.com/repo/centos8_base.repo
+RUN yum clean all
+RUN yum makecache
 
 # 安装依赖
-RUN apt-get install make gcc libpcre3-dev zlib1g-dev --assume-yes
+RUN gcc gcc-c++ make automake autoconf libtool pcre pcre-devel zlib zlib-devel openssl-devel wget vim unzip -y
 
 # 复制工具包
 ADD fastdfs.tar.gz /usr/local/src
