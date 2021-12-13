@@ -1,4 +1,4 @@
-FROM centos7:8.0
+FROM centos7:2.0
 
 # 更新数据源
 WORKDIR /etc
