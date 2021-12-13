@@ -1,4 +1,4 @@
-FROM centos7.8
+FROM centos:7
 
 # 更新数据源
 WORKDIR /etc
