@@ -1,0 +1,7 @@
+# 修改前
+CORE_INCS="$CORE_INCS /usr/local/include/fastdfs /usr/local/include/fastcommon/"
+CORE_LIBS="$CORE_LIBS -L/usr/local/lib -lfastcommon -lfdfsclient"
+
+# 修改后
+CORE_INCS="$CORE_INCS /usr/include/fastdfs /usr/include/fastcommon/"
+CORE_LIBS="$CORE_LIBS -L/usr/lib -lfastcommon -lfdfsclient"
