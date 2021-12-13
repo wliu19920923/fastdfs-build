@@ -1,7 +1,15 @@
-FROM centos:8
+FROM ubuntu:xenial
+
+# 更新数据源
+WORKDIR /etc/apt
+RUN echo 'deb http://mirrors.aliyun.com/ubuntu/ xenial main restricted universe multiverse' > sources.list
+RUN echo 'deb http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted universe multiverse' >> sources.list
+RUN echo 'deb http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted universe multiverse' >> sources.list
+RUN echo 'deb http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse' >> sources.list
+RUN apt-get update
 
 # 安装依赖
-RUN yum install gcc gcc-c++ make automake autoconf libtool pcre pcre-devel zlib zlib-devel openssl-devel wget vim unzip -y
+RUN apt-get install make gcc libpcre3-dev zlib1g-dev --assume-yes
 
 # 复制工具包
 ADD fastdfs-5.11.tar.gz /usr/local/src
