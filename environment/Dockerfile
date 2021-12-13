@@ -1,9 +1,9 @@
-FROM centos8:2.0
+FROM centos7:8.0
 
 # 更新数据源
 WORKDIR /etc
 RUN mv yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
-RUN wget -O yum.repos.d/CentOS-Base.repo http://mirrors.cloud.tencent.com/repo/centos8_base.repo
+RUN wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.cloud.tencent.com/repo/centos7_base.repo
 RUN yum clean all
 RUN yum makecache
 
