@@ -1,4 +1,4 @@
-FROM centos:8:latest
+FROM centos:8
 
 # 安装依赖
 RUN yum install make gcc libpcre3-dev zlib1g-dev --assume-yes
