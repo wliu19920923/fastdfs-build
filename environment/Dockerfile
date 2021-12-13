@@ -8,7 +8,7 @@ FROM centos:7
 # RUN yum makecache
 
 # 安装依赖
-RUN gcc gcc-c++ make automake autoconf libtool pcre pcre-devel zlib zlib-devel openssl-devel wget vim unzip -y
+RUN yum install gcc gcc-c++ make automake autoconf libtool pcre pcre-devel zlib zlib-devel openssl-devel wget vim unzip -y
 
 # 复制工具包
 ADD fastdfs.tar.gz /usr/local/src
