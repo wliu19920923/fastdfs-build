@@ -1,7 +1,7 @@
 FROM centos:8
 
 # 安装依赖
-RUN yum install make gcc libpcre3-dev zlib1g-dev --assume-yes
+RUN yum install gcc gcc-c++ make automake autoconf libtool pcre pcre-devel zlib zlib-devel openssl-devel wget vim unzip -y
 
 # 复制工具包
 ADD fastdfs-5.11.tar.gz /usr/local/src
