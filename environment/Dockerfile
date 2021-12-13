@@ -52,6 +52,7 @@ RUN cp http.conf mime.types /etc/fdfs/
 ADD nginx.conf /usr/local/nginx/conf
 
 COPY entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/entrypoint.sh
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 
 WORKDIR /
