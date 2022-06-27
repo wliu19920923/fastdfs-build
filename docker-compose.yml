@@ -2,10 +2,10 @@ version: '3.1'
 services:
   fastdfs:
     build: environment
-    restart: always
     container_name: fastdfs
+    network_mode: host
     volumes:
       - ./storage:/fastdfs/storage
     ports:
       - 8888:8888
-    network_mode: host
+    restart: always
