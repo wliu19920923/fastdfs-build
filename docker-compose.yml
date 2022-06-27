@@ -6,4 +6,6 @@ services:
     container_name: fastdfs
     volumes:
       - ./storage:/fastdfs/storage
+    ports:
+      - 8888:8888
     network_mode: host
