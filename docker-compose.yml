@@ -8,4 +8,6 @@ services:
       - ./storage:/fastdfs/storage
     ports:
       - 8888:8888
+      - 22122:22122
+      - 23000:23000
     restart: always
